@@ -1,0 +1,15 @@
+{
+  "name": "voting-dapp",
+  "version": "1.0.0",
+  "description": "\"A hello-world application to understand ethereum blockchain dapp\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "solc": "^0.4.19",
+    "web3": "^0.20.1"
+  }
+}
