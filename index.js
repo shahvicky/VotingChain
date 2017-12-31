@@ -20,12 +20,20 @@ VotingContract = web3.eth.contract(abi);
 contractInstance = VotingContract.at('0x5702ca35474141f67d2bb8d3122f2b54d59efed5');
 candidates = {"Vivek": "candidate-1", "Prabhat": "candidate-2", "Utsav": "candidate-3"}
 
+$(".dropdown-menu a").click(function(){
+  var selText = $(this).text();
+  $(this).parents('.dropdown').find('.dropdown-toggle').html(selText);
+});
+
+
 function voteForCandidate() {
-  candidateName = $("#candidate").val();
+  candidateName = $(".dropdown-toggle").text();
+  //candidateName = $("#candidate").val();
   contractInstance.voteForCandidate(candidateName, {from: web3.eth.accounts[0]}, function() {
     let div_id = candidates[candidateName];
     $("#" + div_id).html(contractInstance.totalVotesFor.call(candidateName).toString());
   });
+  $(".dropdown-menu a").parents('.dropdown').find('.dropdown-toggle').html("Choose Candidate");
 }
 
 $(document).ready(function() {

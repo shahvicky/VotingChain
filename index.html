@@ -3,10 +3,52 @@
 <head>
   <title>Hello World DApp</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" crossorigin="anonymous">
+
+<style>
+.dropbtn {
+    background-color: #9d9d9d;
+    color: white;
+    padding: 6px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #9d9d9d;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #9d9d9d}
+
+.show {display:block;}
+</style>
 </head>
 <body class="container">
-  <h1>A Simple Hello World Voting Application</h1>
+  <h1>A Simple Voting Application using Ethereum Blockchain</h1>
   <div class="table-responsive">
     <table class="table table-bordered">
       <thead>
@@ -31,11 +73,25 @@
       </tbody>
     </table>
   </div>
-  <input type="text" id="candidate" />
-  <a href="#" onclick="voteForCandidate()" class="btn btn-primary">Vote</a>
+<div class="dropdown">
+<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Choose Candidate
+  </button>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+	<a class="dropdown-item" href="#">Vivek</a>
+	<a class="dropdown-item" href="#">Prabhat</a>
+	<a class="dropdown-item" href="#">Utsav</a>
+</div>
+<a href="#" onclick="voteForCandidate()" class="btn btn-primary">Vote</a>
+</div>
+
+ <!-- <input type="text" id="candidate" />  -->
+  
 </body>
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="./index.js"></script>
 </html>
 
