@@ -14,11 +14,11 @@ VotingContract = web3.eth.contract(abi);
 
 
 //byteCode = compiledCode.contracts[':Voting'].bytecode
-//deployedContract = VotingContract.new(['Vivek','Prabhat','Utsav'],{data: byteCode, from: web3.eth.accounts[0], gas: 4700000})
+//deployedContract = VotingContract.new(['John','Robin','Kevin'],{data: byteCode, from: web3.eth.accounts[0], gas: 4500000})
 // In your nodejs console, execute "contractInstance.address" to get the address at which the contract is deployed and change the line below to use your deployed address
 
-contractInstance = VotingContract.at('0x5702ca35474141f67d2bb8d3122f2b54d59efed5');
-candidates = {"Vivek": "candidate-1", "Prabhat": "candidate-2", "Utsav": "candidate-3"}
+contractInstance = VotingContract.at('0x3c37ea46a9fccd4b85fa46916b459196c332741d');
+candidates = {"John": "candidate-1", "Robin": "candidate-2", "Kevin": "candidate-3"}
 
 $(".dropdown-menu a").click(function(){
   var selText = $(this).text();
